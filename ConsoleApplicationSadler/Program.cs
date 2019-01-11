@@ -11,17 +11,17 @@ namespace ConsoleApplicationSadler
     {
         static void Main(string[] args)
         {
-            myIntroduction();                               // W01 Assignment Instructions 1 - 3
-            clearConsole();
+            MyIntroduction();                               // W01 Assignment Instructions 1 - 3
+            ClearConsole();
             
-            dateCalculations();                             // W01 Assignment Instructions 4, 5
-            clearConsole();
+            DateCalculations();                             // W01 Assignment Instructions 4, 5
+            ClearConsole();
             
-            glazingCalculations();                          // W01 Assignment Instructions 6, 7
-            clearConsole();
+            GlazingCalculations();                          // W01 Assignment Instructions 6, 7
+            ClearConsole();
         }
 
-        private static void myIntroduction()                // W01 Assignment Instructions 1 - 3
+        private static void MyIntroduction()                // W01 Assignment Instructions 1 - 3
         {
             string fullName, location;
             
@@ -36,10 +36,17 @@ namespace ConsoleApplicationSadler
             Console.WriteLine($" I am from {location}.\r\n");
         }
 
-        private static void dateCalculations()             // W01 Assignment Instructions 4, 5
+        private static void DateCalculations()             // W01 Assignment Instructions 4, 5
         {
             DateTime today = DateTime.Today;
-            DateTime christmas = new DateTime(2019, 12, 25);
+            int christmasYear = DateTime.Today.Year;
+
+            if (today.Day > 25 && today.Month == 12)
+            {
+                christmasYear = christmasYear + 1;
+            }
+
+            DateTime christmas = new DateTime(christmasYear, 12, 25);
             TimeSpan numberOfDays = christmas - today;
 
             Console.WriteLine("=====================================================================");
@@ -49,7 +56,7 @@ namespace ConsoleApplicationSadler
             Console.WriteLine($" There are {numberOfDays.TotalDays} days to Christmas {christmas.Year}.\r\n");            
         }
 
-        private static void glazingCalculations()           // W01 Assignment Instructions 6, 7
+        private static void GlazingCalculations()           // W01 Assignment Instructions 6, 7
         {
             double width, height, woodLength, glassArea;
             string widthString, heightString;
@@ -104,7 +111,7 @@ namespace ConsoleApplicationSadler
                 }
             }
 
-            // Calculate the wood length require and convert into feet. 
+            // Calculate the wood length required and convert into feet. 
             woodLength = 2 * (width + height) * 3.25;
 
             // Calculate the glass area required in square meters
@@ -114,7 +121,7 @@ namespace ConsoleApplicationSadler
             Console.WriteLine($" The total area of the glass required is {glassArea} square meters.\r\n");
         }
 
-        private static void clearConsole()          // Added to clear console after each method has run
+        private static void ClearConsole()          // Added to clear console after each method has run
         {
             Console.WriteLine("=====================================================================\r\n");
             Console.Write(" Press any key to continue...");
