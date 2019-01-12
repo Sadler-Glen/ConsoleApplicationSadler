@@ -131,7 +131,7 @@ namespace ConsoleApplicationSadler
         }                     
     }
 
-    public static class GlobalVar // added global variable message
+    public static class GlobalVar // added global string variable lines
     {
         public const string lines = "=====================================================================";
     }
