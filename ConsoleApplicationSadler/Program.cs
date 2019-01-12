@@ -7,7 +7,7 @@
 
 namespace ConsoleApplicationSadler
 {
-    class WeekOneAssignment
+    class Program
     {
         static void Main(string[] args)
         {
