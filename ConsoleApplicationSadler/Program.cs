@@ -40,7 +40,8 @@ namespace ConsoleApplicationSadler
         private static void DateCalculations()             // W01 Assignment Instructions 4, 5
         {
             DateTime today = DateTime.Today;
-            int christmasYear = DateTime.Today.Year;
+            var todayDate = today.ToString("d");
+            var christmasYear = DateTime.Today.Year;
 
             if (today.Day >= 25 && today.Month == 12)
             {
@@ -49,12 +50,13 @@ namespace ConsoleApplicationSadler
 
             DateTime christmas = new DateTime(christmasYear, 12, 25);
             TimeSpan numberOfDays = christmas - today;
+            var totalNumberOfDays = numberOfDays.TotalDays;
 
             Console.WriteLine(GlobalVar.lines);
             Console.WriteLine(" D A T E   C A L C U L A T I O N S");
             Console.WriteLine($"{GlobalVar.lines} \r\n");
-            Console.WriteLine($" The date today is {today.ToString("d")} (NZ Region d/mm/yyyy).\r\n");
-            Console.WriteLine($" There are {numberOfDays.TotalDays} days to Christmas {christmas.Year}.\r\n");            
+            Console.WriteLine($" The date today is {todayDate} (NZ Region d/mm/yyyy).\r\n");
+            Console.WriteLine($" There are {totalNumberOfDays} days to Christmas {christmas.Year}.\r\n");            
         }
 
         private static void GlazingCalculations()           // W01 Assignment Instructions 6, 7
