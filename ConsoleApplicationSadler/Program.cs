@@ -11,6 +11,7 @@ namespace ConsoleApplicationSadler
 
     class Program
     {
+        private static string lines = "=====================================================================";
         static void Main(string[] args)
         {
             MyIntroduction();                               // W01 Assignment Instructions 1 - 3
@@ -29,9 +30,9 @@ namespace ConsoleApplicationSadler
             
             fullName = "Glen Sadler";
             location = "New Zealand";
-            Console.WriteLine(GlobalVar.lines);
+            Console.WriteLine(lines);
             Console.WriteLine(" M Y   I N T R O D U C T I O N");
-            Console.WriteLine($"{GlobalVar.lines} \r\n");
+            Console.WriteLine($"{lines} \r\n");
             // use String Interpolation as required for this assignement
             Console.WriteLine($" My name is {fullName}.");
             Console.WriteLine($" I am from {location}.\r\n");
@@ -52,9 +53,9 @@ namespace ConsoleApplicationSadler
             TimeSpan numberOfDays = christmas - today;
             var totalNumberOfDays = numberOfDays.TotalDays;
 
-            Console.WriteLine(GlobalVar.lines);
+            Console.WriteLine(lines);
             Console.WriteLine(" D A T E   C A L C U L A T I O N S");
-            Console.WriteLine($"{GlobalVar.lines} \r\n");
+            Console.WriteLine($"{lines} \r\n");
             Console.WriteLine($" The date today is {todayDate} (NZ Region d/mm/yyyy).\r\n");
             Console.WriteLine($" There are {totalNumberOfDays} days to Christmas {christmas.Year}.\r\n");            
         }
@@ -64,9 +65,9 @@ namespace ConsoleApplicationSadler
             double width, height, woodLength, glassArea;
             string widthString, heightString;
 
-            Console.WriteLine(GlobalVar.lines);
+            Console.WriteLine(lines);
             Console.WriteLine(" G L A Z I N G  C A L C U L A T O R");
-            Console.WriteLine($"{GlobalVar.lines} \r\n");
+            Console.WriteLine($"{lines} \r\n");
 
             while (true)
             {
@@ -126,16 +127,10 @@ namespace ConsoleApplicationSadler
 
         private static void ClearConsole()          // Added to clear console after each method has run
         {
-            Console.WriteLine($"{GlobalVar.lines} \r\n");
+            Console.WriteLine($"{lines} \r\n");
             Console.Write(" Press any key to continue...");
             Console.ReadKey(true);
             Console.Clear();
         }                     
     }
-
-    public static class GlobalVar // added global string variable lines
-    {
-        public const string lines = "=====================================================================";
-    }
-
 }
