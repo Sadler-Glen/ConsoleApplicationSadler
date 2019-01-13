@@ -44,7 +44,7 @@ namespace ConsoleApplicationSadler
             var todayDate = today.ToString("d");
             var christmasYear = DateTime.Today.Year;
 
-            if (today.Day >= 25 && today.Month == 12)
+            if ((today.Day >= 25) && (today.Month == 12))
             {
                 christmasYear = christmasYear + 1;
             }
